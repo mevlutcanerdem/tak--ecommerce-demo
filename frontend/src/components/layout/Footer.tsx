@@ -31,7 +31,7 @@ export function Footer() {
 
   return (
     <footer className="mt-24 border-t border-charcoal/10 bg-charcoal text-cream-100">
-      <div className="container-page grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-page grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-5">
         <div>
           <Logo light />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream-100/70">
@@ -117,13 +117,35 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <span className="cursor-default">Bize Ulaşın</span>
-            </li>
-            <li>
               <span className="cursor-default">Kargo &amp; İade</span>
             </li>
             <li>
               <span className="cursor-default">Gizlilik Politikası</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mb-4 text-sm font-semibold uppercase tracking-widest2 text-gold-400">
+            Bize Ulaşın
+          </h4>
+          <ul className="space-y-3 text-sm text-cream-100/70">
+            <li>Mevlüt Can Erdem</li>
+            <li>
+              <a
+                href="tel:+905558971293"
+                className="transition-colors hover:text-cream-50"
+              >
+                0555 897 12 93
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:mevlutcanerdem34@gmail.com"
+                className="break-all transition-colors hover:text-cream-50"
+              >
+                mevlutcanerdem34@gmail.com
+              </a>
             </li>
           </ul>
         </div>
