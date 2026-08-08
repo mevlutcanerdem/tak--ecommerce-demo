@@ -2,6 +2,9 @@
 
 Profesyonel bir mücevher (takı) e-ticaret sitesi için uçtan uca demo proje. Gerçek bir ödeme altyapısı **kullanılmamaktadır** — sipariş akışı yalnızca demo/gösterim amaçlıdır.
 
+**Canlı demo:** https://frontend-production-0fdd.up.railway.app
+(Railway üzerinde barındırılıyor — backend API: https://backend-production-ba476.up.railway.app/api, Swagger: https://backend-production-ba476.up.railway.app/swagger-ui.html)
+
 ## Mimari
 
 ```
