@@ -1,4 +1,4 @@
-# Nginx configuration for serving the built Aurelia SPA and reverse-proxying
+# Nginx configuration for serving the built Sumer Jewelry SPA and reverse-proxying
 # API calls to the Spring Boot backend inside the docker-compose / k8s network.
 #
 # This file is an nginx envsubst *template* (see Dockerfile): at container

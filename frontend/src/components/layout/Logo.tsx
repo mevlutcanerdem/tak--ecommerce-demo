@@ -30,7 +30,7 @@ export function Logo({ className, light = false }: LogoProps) {
           opacity="0.6"
         />
       </svg>
-      <span>Aurelia</span>
+      <span>Sumer Jewelry</span>
     </Link>
   )
 }

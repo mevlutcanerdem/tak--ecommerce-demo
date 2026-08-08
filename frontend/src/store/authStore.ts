@@ -27,7 +27,7 @@ export const useAuthStore = create<AuthState>()(
       logout: () => set({ token: null, user: null }),
     }),
     {
-      name: 'aurelia-auth',
+      name: 'sumer-jewelry-auth',
     },
   ),
 )

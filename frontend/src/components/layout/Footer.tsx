@@ -35,7 +35,7 @@ export function Footer() {
         <div>
           <Logo light />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream-100/70">
-            Aurelia, zamansız zarafeti günlük kullanım için tasarlanmış takılarla
+            Sumer Jewelry, zamansız zarafeti günlük kullanım için tasarlanmış takılarla
             buluşturur. Her parça, ustalıkla seçilmiş malzemeler ve özenli işçilikle
             hazırlanır.
           </p>
@@ -179,7 +179,7 @@ export function Footer() {
 
       <div className="border-t border-cream-100/10 py-6">
         <div className="container-page flex flex-col items-center justify-between gap-3 text-xs text-cream-100/50 sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} Aurelia Takı. Tüm hakları saklıdır.</p>
+          <p>&copy; {new Date().getFullYear()} Sumer Jewelry. Tüm hakları saklıdır.</p>
           <p>Bu bir demo e-ticaret sitesidir. Gerçek ödeme işlemi yapılmaz.</p>
         </div>
       </div>

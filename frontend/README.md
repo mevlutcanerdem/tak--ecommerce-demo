@@ -1,6 +1,6 @@
-# Aurelia — Takı E-Ticaret Frontend
+# Sumer Jewelry — Takı E-Ticaret Frontend
 
-React 18 + TypeScript + Vite frontend for the Aurelia jewelry demo store. Built
+React 18 + TypeScript + Vite frontend for the Sumer Jewelry demo store. Built
 against the REST contract defined in `API_CONTRACT.md` at the repo root.
 
 ## Stack
@@ -93,8 +93,8 @@ the order as a demo confirmation, and the UI says so explicitly.
 ## Docker
 
 ```bash
-docker build -t aurelia-frontend .
-docker run -p 8080:80 -e BACKEND_UPSTREAM=backend:8080 aurelia-frontend
+docker build -t sumer-jewelry-frontend .
+docker run -p 8080:80 -e BACKEND_UPSTREAM=backend:8080 sumer-jewelry-frontend
 ```
 
 The multi-stage `Dockerfile` builds the app with Node, then serves the static
