@@ -45,6 +45,8 @@ export default {
         'fade-in': 'fadeIn 0.6s ease-out both',
         'fade-in-up': 'fadeInUp 0.7s ease-out both',
         shimmer: 'shimmer 1.6s infinite',
+        'glow-pulse': 'glowPulse 6s ease-in-out infinite',
+        'glow-drift': 'glowDrift 10s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -58,6 +60,14 @@ export default {
         shimmer: {
           '0%': { backgroundPosition: '-500px 0' },
           '100%': { backgroundPosition: '500px 0' },
+        },
+        glowPulse: {
+          '0%, 100%': { opacity: '0.45', transform: 'scale(1)' },
+          '50%': { opacity: '0.85', transform: 'scale(1.15)' },
+        },
+        glowDrift: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '50%': { transform: 'translate(-4%, 3%) scale(1.08)' },
         },
       },
       transitionTimingFunction: {

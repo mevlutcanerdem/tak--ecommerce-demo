@@ -8,13 +8,12 @@ import { QuantitySelector } from '@/components/ui/QuantitySelector'
 import { Skeleton } from '@/components/ui/Skeleton'
 import { ErrorState } from '@/components/ui/ErrorState'
 import { ProductGrid } from '@/components/product/ProductGrid'
+import { ProductSpotlight } from '@/components/product/ProductSpotlight'
 import { useCartStore } from '@/store/cartStore'
-import { classNames } from '@/lib/utils'
 
 export function ProductDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const { data: product, isLoading, isError, refetch } = useProduct(slug)
-  const [activeImage, setActiveImage] = useState(0)
   const [quantity, setQuantity] = useState(1)
   const [justAdded, setJustAdded] = useState(false)
   const addItem = useCartStore((state) => state.addItem)
@@ -99,32 +98,7 @@ export function ProductDetailPage() {
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
         {/* Gallery */}
-        <div>
-          <div className="aspect-square w-full overflow-hidden bg-cream-100">
-            <img
-              src={product.images[activeImage] ?? product.images[0]}
-              alt={product.name}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          {product.images.length > 1 && (
-            <div className="mt-4 grid grid-cols-5 gap-3">
-              {product.images.map((image, index) => (
-                <button
-                  key={image + index}
-                  type="button"
-                  onClick={() => setActiveImage(index)}
-                  className={classNames(
-                    'aspect-square overflow-hidden border-2 transition-colors',
-                    activeImage === index ? 'border-gold-500' : 'border-transparent',
-                  )}
-                >
-                  <img src={image} alt="" className="h-full w-full object-cover" />
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+        <ProductSpotlight images={product.images} alt={product.name} />
 
         {/* Details */}
         <div>
