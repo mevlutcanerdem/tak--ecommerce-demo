@@ -1,0 +1,21 @@
+name: Dependency Review
+
+# Fails a PR if it introduces a dependency with a known high/critical
+# vulnerability or an incompatible license, across both backend (Maven)
+# and frontend (npm) manifests.
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high

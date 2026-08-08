@@ -1,0 +1,31 @@
+# Requires the ingress-nginx addon:
+#   minikube addons enable ingress
+# Then add "127.0.0.1 taki-demo.local" (or `minikube ip`) to your hosts file
+# and browse to http://taki-demo.local
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: taki-ingress
+  namespace: taki-demo
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: taki-demo.local
+      http:
+        paths:
+          - path: /api(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: backend
+                port:
+                  number: 8080
+          - path: /()(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: frontend
+                port:
+                  number: 80
