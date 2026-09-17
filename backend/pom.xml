@@ -58,7 +58,9 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>test</scope>
+            <!-- runtime (not test) scope: needed for the local "demo" profile
+                 (see application.yml) used to run this app without Docker/Postgres. -->
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>

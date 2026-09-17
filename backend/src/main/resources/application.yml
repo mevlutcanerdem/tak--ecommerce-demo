@@ -94,3 +94,27 @@ app:
   jwt:
     secret: test-only-secret-key-not-used-in-production-32bytes-min
     expiration-ms: 3600000
+
+---
+# Local-only profile for running the demo without Docker/Postgres (e.g. presenting
+# offline). Uses a file-backed H2 database instead of Postgres so data survives
+# restarts within the same demo session. Run with:
+#   mvn spring-boot:run -Dspring-boot.run.profiles=demo -Dspring-boot.run.useTestClasspath=true
+spring:
+  config:
+    activate:
+      on-profile: demo
+  datasource:
+    url: jdbc:h2:file:./data/takidemo;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+
+logging:
+  level:
+    com.takidemo.backend: DEBUG

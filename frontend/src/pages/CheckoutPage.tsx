@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useCartStore } from '@/store/cartStore'
 import { useAuthStore } from '@/store/authStore'
@@ -37,8 +37,12 @@ export function CheckoutPage() {
   const [submitError, setSubmitError] = useState<string | null>(null)
 
   const createOrderMutation = useCreateOrder()
+  // Guards against navigating away mid-submit: clearCart() empties the cart
+  // right before we route to the confirmation page, and without this flag
+  // the empty-cart check below would win that race and bounce back to /sepet.
+  const orderPlacedRef = useRef(false)
 
-  if (items.length === 0) {
+  if (items.length === 0 && !orderPlacedRef.current) {
     return <Navigate to="/sepet" replace />
   }
 
@@ -74,6 +78,7 @@ export function CheckoutPage() {
         email: values.email.trim(),
       })
 
+      orderPlacedRef.current = true
       clearCart()
       navigate(`/siparis-onay/${order.orderNumber}`, { state: { order } })
     } catch (error) {
